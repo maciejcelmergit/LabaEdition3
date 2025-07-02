@@ -79,8 +79,7 @@ void UGrabberComponent::Grab()
 	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(Start, CameraRotation);
 	End = Start + CameraRotation.Vector() * m_GrabbingRange;
 
-	GetWorld()->LineTraceSingleByChannel(Result, Start, End, ECollisionChannel::ECC_Visibility);
-
+	GetWorld()->LineTraceSingleByChannel(Result, Start, End, ECC_Visibility);
 	//DrawDebugLine(GetWorld(), Start, End, FColor::Blue, false, 5.0f, 0, 5.0f);
 
 	if (Result.GetActor())
